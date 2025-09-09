@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle Financeiro Pessoal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-wallet"></i> Meu Controle Financeiro</h1>
+            <div class="saldo-container">
+                <div class="saldo-card receitas">
+                    <i class="fas fa-arrow-up"></i>
+                    <div>
+                        <span>Receitas</span>
+                        <h3 id="total-receitas">R$ 0,00</h3>
+                    </div>
+                </div>
+                <div class="saldo-card despesas">
+                    <i class="fas fa-arrow-down"></i>
+                    <div>
+                        <span>Despesas</span>
+                        <h3 id="total-despesas">R$ 0,00</h3>
+                    </div>
+                </div>
+                <div class="saldo-card saldo">
+                    <i class="fas fa-balance-scale"></i>
+                    <div>
+                        <span>Saldo</span>
+                        <h3 id="saldo-total">R$ 0,00</h3>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="form-section">
+                <h2>Nova Transação</h2>
+                <form id="transaction-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="descricao">Descrição</label>
+                            <input type="text" id="descricao" required placeholder="Ex: Salário, Mercado, Conta de luz...">
+                        </div>
+                        <div class="form-group">
+                            <label for="valor">Valor</label>
+                            <input type="number" id="valor" step="0.01" required placeholder="0,00">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="categoria">Categoria</label>
+                            <select id="categoria" required>
+                                <option value="">Selecione uma categoria</option>
+                                <option value="Salário">Salário</option>
+                                <option value="Freelance">Freelance</option>
+                                <option value="Investimentos">Investimentos</option>
+                                <option value="Alimentação">Alimentação</option>
+                                <option value="Transporte">Transporte</option>
+                                <option value="Moradia">Moradia</option>
+                                <option value="Saúde">Saúde</option>
+                                <option value="Educação">Educação</option>
+                                <option value="Lazer">Lazer</option>
+                                <option value="Compras">Compras</option>
+                                <option value="Outros">Outros</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="data">Data</label>
+                            <input type="date" id="data" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tipo">Tipo</label>
+                            <select id="tipo" required>
+                                <option value="">Selecione o tipo</option>
+                                <option value="receita">Receita</option>
+                                <option value="despesa">Despesa</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-plus"></i> Adicionar Transação
+                    </button>
+                </form>
+            </section>
+
+            <section class="transactions-section">
+                <div class="section-header">
+                    <h2>Histórico de Transações</h2>
+                    <div class="filters">
+                        <select id="filter-categoria">
+                            <option value="">Todas as categorias</option>
+                        </select>
+                        <select id="filter-tipo">
+                            <option value="">Todos os tipos</option>
+                            <option value="receita">Receitas</option>
+                            <option value="despesa">Despesas</option>
+                        </select>
+                        <button id="clear-all" class="btn-danger">
+                            <i class="fas fa-trash"></i> Limpar Tudo
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="table-container">
+                    <table id="transactions-table">
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Descrição</th>
+                                <th>Categoria</th>
+                                <th>Valor</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transactions-body">
+                            <!-- Transações serão inseridas aqui -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div id="empty-state" class="empty-state">
+                    <i class="fas fa-receipt"></i>
+                    <p>Nenhuma transação encontrada</p>
+                    <small>Adicione sua primeira transação acima</small>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
