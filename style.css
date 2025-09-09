@@ -5,8 +5,8 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1f2937 0%, #0f172a 100%); /* cinza escuro */
     min-height: 100vh;
     color: #333;
 }
@@ -79,7 +79,7 @@ header h1 {
 }
 
 .saldo-card.saldo i {
-    background: linear-gradient(135deg, #2196F3, #1976D2);
+    background: linear-gradient(135deg, #64748B, #475569); /* cinza azulado */
 }
 
 .saldo-card div span {
@@ -143,12 +143,12 @@ main {
 
 .form-group input:focus, .form-group select:focus {
     outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    border-color: #10B981; /* verde */
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #10B981, #059669); /* verde */
     color: white;
     border: none;
     padding: 15px 30px;
@@ -165,7 +165,7 @@ main {
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.25);
 }
 
 .btn-danger {
